@@ -3,6 +3,7 @@
 	margin: 0px; 
 	background-color: white; 
 	color: #be8f01; 
-	border: 1px solid #be8f01; 
+	border: 1px solid #be8f01;
+	border-radius: 0px;
 	min-height: 300px;
 }
