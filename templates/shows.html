@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for sample_row in ['A','B','C','D','E','F','G','H','I'] %}
+<div class='row'>
+	{% for sample_show_num in range(0,4) %}
+		<div class="col-sm-3" style="border-radius: 3px; margin: 0px; background-color: white; color: #be8f01; border: 1px solid #be8f01; min-height: 260px"><h4 class="myfont">Sample Show {{sample_row}}{{ sample_show_num }}</h4></div>
+	{% endfor %}
+</div>
+{% endfor %}
+
+{% endblock %}
