@@ -2,9 +2,18 @@
 {% block content %}
 
 {% for sample_row in ['A','B','C','D','E','F','G','H','I'] %}
-<div class='row'>
-	{% for sample_show_num in range(0,4) %}
-		<div class="col-sm-3" style="border-radius: 3px; margin: 0px; background-color: white; color: #be8f01; border: 1px solid #be8f01; min-height: 260px"><h4 class="myfont">Sample Show {{sample_row}}{{ sample_show_num }}</h4></div>
+<div class='row' style="margin-bottom: 20px">
+	{% for sample_show in ["Burlington", "Empty Bottle", "Subterranean", "Burlington"] %}
+		<div class="col-sm-3 show-tile"><h4 class="myfont">Saturday May 14</h4>
+			{% if sample_show == "Burlington" %}
+			<img src="/static/img/burlington_afterstroke.png" class="burlington">
+			{% elif sample_show == "Empty Bottle" %}
+			<img src="/static/img/eb_afterstroke.png" class="empty-bottle">
+			{% else %}
+			<img src="/static/img/subt_afterstroke.png" class="subterranean">
+			{% endif %}
+			<div class="band-and-venue-info myfont">Parquet Courts </br> Empty Bottle</div>
+		</div>
 	{% endfor %}
 </div>
 {% endfor %}

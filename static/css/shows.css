@@ -1,9 +1,26 @@
 
+body {
+	background-color: #4e42f4;
+}
+
+.myfont {
+	font-family: "Courier New", Courier, monospace;
+}
+
 .show-tile {
 	margin: 0px; 
-	background-color: white; 
-	color: #be8f01; 
-	border: 1px solid #be8f01;
+	color: white; 
+	border: 1px solid white;
 	border-radius: 0px;
 	min-height: 300px;
+}
+
+.burlington {
+	width: 85%;
+}
+.empty-bottle {
+	width: 85%;
+}
+.subterranean {
+	width: 85%;
 }
