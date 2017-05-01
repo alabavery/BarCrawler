@@ -20,6 +20,10 @@ a:hover {
 	text-decoration: none;
 }
 
+.day-row {
+	margin: 1rem;
+}
+
 .show-tile {
 	margin: 0px; 
 	color: white; 
@@ -31,7 +35,7 @@ a:hover {
 
 .band-and-venue-info {
 	position: absolute;
-	bottom: 10px;
+	bottom: 5rem;
 }
 
 .venue-art {

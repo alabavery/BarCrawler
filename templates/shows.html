@@ -2,9 +2,10 @@
 {% block content %}
 
 {% for sample_row in ['A','B','C','D','E','F','G','H','I'] %}
+<div class='row'><div class="col-sm-12 day-row"><h4 class="myfont">Saturday May 14</h4></div></div>
 <div class='row' style="margin-bottom: 2%">
-	{% for sample_show in ["Schubas", "Empty Bottle", "Subterranean", "Burlington"] %}
-		<div class="col-sm-3 show-tile"><h4 class="myfont">Saturday May 14</h4>
+	{% for sample_show in ["Schubas", "Empty Bottle", "Subterranean", "Burlington", "Schubas", "Burlington"] %}
+		<div class="col-sm-3 show-tile">
 			{% if sample_show == "Burlington" %}
 			<img src="/static/img/burlington_afterstroke.png" class="venue-art burlington">
 			{% elif sample_show == "Empty Bottle" %}
