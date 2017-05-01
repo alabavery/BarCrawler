@@ -2,17 +2,19 @@
 {% block content %}
 
 {% for sample_row in ['A','B','C','D','E','F','G','H','I'] %}
-<div class='row' style="margin-bottom: 20px">
-	{% for sample_show in ["Burlington", "Empty Bottle", "Subterranean", "Burlington"] %}
+<div class='row' style="margin-bottom: 2%">
+	{% for sample_show in ["Schubas", "Empty Bottle", "Subterranean", "Burlington"] %}
 		<div class="col-sm-3 show-tile"><h4 class="myfont">Saturday May 14</h4>
 			{% if sample_show == "Burlington" %}
-			<img src="/static/img/burlington_afterstroke.png" class="burlington">
+			<img src="/static/img/burlington_afterstroke.png" class="venue-art burlington">
 			{% elif sample_show == "Empty Bottle" %}
-			<img src="/static/img/eb_afterstroke.png" class="empty-bottle">
+			<img src="/static/img/eb_afterstroke.png" class="venue-art empty-bottle">
+			{% elif sample_show == "Schubas" %}
+			<img src="/static/img/schubas_afterstroke.png" class="venue-art schubas">
 			{% else %}
-			<img src="/static/img/subt_afterstroke.png" class="subterranean">
+			<img src="/static/img/subt_afterstroke.png" class="venue-art subterranean">
 			{% endif %}
-			<div class="band-and-venue-info myfont">Parquet Courts </br> Empty Bottle</div>
+			<div class="band-and-venue-info myfont"><span style="font-size: 105%">Parquet Courts</span></br> Empty Bottle | 8pm</div>
 		</div>
 	{% endfor %}
 </div>

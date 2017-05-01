@@ -3,8 +3,21 @@ body {
 	background-color: #4e42f4;
 }
 
+a:hover {
+	text-decoration: none;
+	color: white;
+}
+
 .myfont {
 	font-family: "Courier New", Courier, monospace;
+	color: white;
+	text-decoration: none;
+}
+
+.mylargefont {
+	font-family: 'Lucida Console', Monaco, monospace;
+	color: white;
+	text-decoration: none;
 }
 
 .show-tile {
@@ -13,14 +26,33 @@ body {
 	border: 1px solid white;
 	border-radius: 0px;
 	min-height: 300px;
+	cursor: pointer;
+}
+
+.band-and-venue-info {
+	position: absolute;
+	bottom: 10px;
+}
+
+.venue-art {
+	left: 20px;
 }
 
 .burlington {
 	width: 85%;
 }
 .empty-bottle {
-	width: 85%;
+	position: relative;
+	width: 70%;
+	top: 2rem;
 }
 .subterranean {
 	width: 85%;
+}
+.schubas {
+	width: 85%;
+}
+
+.clicked-tile {
+	background-image: url("static/img/Parquet_Courts.jpg");
 }
