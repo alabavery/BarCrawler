@@ -1,24 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% for sample_row in ['A','B','C','D','E','F','G','H','I'] %}
-<div class='row'><div class="col-sm-12 day-row"><h4 class="myfont">Saturday May 14</h4></div></div>
+{% for day in show_data %}
 <div class='row' style="margin-bottom: 2%">
-	{% for sample_show in ["Schubas", "Empty Bottle", "Subterranean", "Burlington", "Schubas", "Burlington"] %}
-		<div class="col-sm-3 show-tile">
-			{% if sample_show == "Burlington" %}
-			<img src="/static/img/burlington_afterstroke.png" class="venue-art burlington">
-			{% elif sample_show == "Empty Bottle" %}
-			<img src="/static/img/eb_afterstroke.png" class="venue-art empty-bottle">
-			{% elif sample_show == "Schubas" %}
-			<img src="/static/img/schubas_afterstroke.png" class="venue-art schubas">
-			{% else %}
-			<img src="/static/img/subt_afterstroke.png" class="venue-art subterranean">
-			{% endif %}
-			<div class="band-and-venue-info myfont"><span style="font-size: 105%">Parquet Courts</span></br> Empty Bottle | 8pm</div>
+	<div class='row'><div class="col-sm-12 day-row"><h4 class="myfont">{{ day[0] }}</h4></div></div>
+	{% for show in day[1] %}
+	<div class="col-sm-3 show-tile">
+		<img src="/static/img/{{ show['venue_img'] }}.png" class="venue-art {{ show['venue_img'] }}">
+		<div class="band-and-venue-info myfont">
+			<span style="font-size: 105%">{{ show['artist_name'] }}</span></br> {{ show['venue'] }} | {{ show['time'] }}
 		</div>
+	</div>
 	{% endfor %}
 </div>
 {% endfor %}
+{{ testdiv }}
 
 {% endblock %}
