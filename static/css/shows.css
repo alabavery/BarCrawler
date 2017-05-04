@@ -43,7 +43,10 @@ a:hover {
 }
 
 .burlington {
-	width: 85%;
+	position: relative;
+	width: 75%;
+	left: 2rem;
+	top: 1rem;
 }
 .empty-bottle {
 	position: relative;
@@ -55,6 +58,19 @@ a:hover {
 }
 .schubas {
 	width: 85%;
+}
+.lincoln-hall {
+	width: 100%;
+}
+.beat-kitchen {
+	position: relative;
+	width: 65%;
+	top: 1rem;
+}
+.coles {
+	position: relative;
+	width: 70%;
+	top: 2.5rem;
 }
 
 .clicked-tile {
