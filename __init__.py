@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
 from json import loads as json_loads
 
 app = Flask(__name__)
@@ -21,6 +21,16 @@ def shows():
 						title='Shows | ChiBarCrawler',
 						show_data=show_data
 						)
+
+
+@app.route('/_expand_show')
+def expand_show():
+	event_id = str(request.args.get('event_id', '0', type=str))
+
+	for day in show_data:
+		for show in day[1]:
+			if show['event_id'] == event_id:
+				return jsonify(show)
 
 
 @app.route("/spotify-play")
