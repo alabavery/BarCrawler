@@ -15,6 +15,9 @@ $(document).ready(function(){
 			// eventually, the code after 'spotify:track:' will be replaced with the ajax call...
 			// for now, let's just try getting the play button in there without complicating it with ajax call
 			// in any case, the infrastructure is there now.
+			$(that).find('.spotify-play').append('<iframe src="https://open.spotify.com/embed?uri=spotify:\
+				user:spotify:playlist:3rgsDhGHZxZ9sB9DQWQfuf" width="300" height="100" frameborder="0" \
+				allowtransparency="true"></iframe>');
 		});
 		return false;
 	});
