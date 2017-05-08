@@ -6,14 +6,14 @@
 <div class='row' style="margin-bottom: 2%">
 	<div class='row'><div class="col-sm-12 day-row"><h4 class="myfont">{{ day[0] }}</h4></div></div>
 	{% for show in day[1] %}
-	<div class="col-sm-3 show-tile" event_id="{{ show['event_id'] }}">
+	<div class="col-sm-3 show-tile" event_id="{{ show['event_id'] }}" artist-id="{{ show['artist_id'] }}">
 		
 		<img src="/static/img/{{ show['venue_img'] }}.png" class="venue-art {{ show['venue_img'] }}">
 		<div class="band-and-venue-info myfont">
 			<span style="font-size: 105%">{{ show['artist_name'] }}</span></br> {{ show['venue'] }} | {{ show['time'] }}
 		</div>
 
-		<div class="col-sm-12 expanded-show-container" artist-id="{{ show['artist_id'] }}" style="display: none">
+		<div class="col-sm-12 expanded-show-container" style="display: none">
 			<img src="{{ show['band_img'] }}" class="expanded-show-image">
 			<div class="expanded-show-text" style="min-height: 300px;">
 				<div class="expanded-show-artist">{{ show['artist_name'] }}</div>

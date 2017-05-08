@@ -4,20 +4,16 @@ $(document).ready(function(){
 
 		var that = this;
 		$.getJSON($SCRIPT_ROOT + '/_expand_show', {
-			event_id: $(that).attr('event_id')
-		}, function(expanded_show) {
-			var spotify_play_uri = expanded_show['spotify']
-			// ignore the spotify_play_url var for now...
-			// here, we want to insert/inject into the div named 'spotify-play' the html for the iframe 
-			// for a spotify play button...
-			// <iframe src="https://open.spotify.com/embed?uri=spotify:track:5EyR6C5JvXzPlOMzU9A2GS" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
-			// change wifth and height as necessary
-			// eventually, the code after 'spotify:track:' will be replaced with the ajax call...
-			// for now, let's just try getting the play button in there without complicating it with ajax call
-			// in any case, the infrastructure is there now.
-			$(that).find('.spotify-play').append('<iframe src="https://open.spotify.com/embed?uri=spotify:\
-				user:spotify:playlist:3rgsDhGHZxZ9sB9DQWQfuf" width="300" height="100" frameborder="0" \
-				allowtransparency="true"></iframe>');
+			artist_id: $(that).attr('artist-id')
+		}, function(artist_info) {
+			var spotify_play_uri = artist_info['spotify_track_id']
+
+			if(spotify_play_uri) { // possible that we could not find the artist on spotify and will return null
+				$(that).find('.spotify-play').append('<iframe src="https://open.spotify.com/embed?uri=spotify:\
+					track:'+spotify_play_uri+'"</iframe>');
+			} else {
+				alert("Sorry we either couldn't find or couldn't verify that artist on Spotify.");
+			}
 		});
 		return false;
 	});

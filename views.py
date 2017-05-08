@@ -28,12 +28,9 @@ artist_data = json_loads(json_file.read())
 json_file.close()
 @app.route('/_expand_show')
 def expand_show():
-	event_id = str(request.args.get('event_id', '0', type=str))
-
-	for day in show_data:
-		for show in day[1]:
-			if show['event_id'] == event_id:
-				return jsonify(show)
+	artist_id = str(request.args.get('artist_id', '0', type=str))
+	artist_info = [artist_dict for artist_dict in artist_data if str(artist_dict['songkick_id']) == artist_id][0]
+	return jsonify(artist_info)
 
 
 @app.route("/spotify-play")
