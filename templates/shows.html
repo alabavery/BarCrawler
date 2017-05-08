@@ -13,7 +13,7 @@
 			<span style="font-size: 105%">{{ show['artist_name'] }}</span></br> {{ show['venue'] }} | {{ show['time'] }}
 		</div>
 
-		<div class="col-sm-12 expanded-show-container" style="display: none">
+		<div class="col-sm-12 expanded-show-container" artist-id="{{ show['artist_id'] }}" style="display: none">
 			<img src="{{ show['band_img'] }}" class="expanded-show-image">
 			<div class="expanded-show-text" style="min-height: 300px;">
 				<div class="expanded-show-artist">{{ show['artist_name'] }}</div>
