@@ -72,6 +72,11 @@ a:hover {
 	width: 70%;
 	top: 2.5rem;
 }
+.hideout {
+	position: relative;
+	top: 2.5rem;
+	width: 70%;
+}
 
 .clicked-tile {
 	background-image: url("static/img/Parquet_Courts.jpg");

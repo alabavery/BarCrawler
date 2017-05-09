@@ -16,6 +16,10 @@ def index():
 json_file = open(config.SONGKICK_FILE_PATH, 'r')
 show_data = json_loads(json_file.read())
 json_file.close()
+json_file = open(config.ARTIST_FILE_PATH, 'r')
+artist_data = json_loads(json_file.read())
+json_file.close()
+
 @app.route("/shows")
 def shows():
 	return render_template('shows.html',
@@ -23,9 +27,7 @@ def shows():
 						show_data=show_data
 						)
 
-json_file = open(config.ARTIST_FILE_PATH, 'r')
-artist_data = json_loads(json_file.read())
-json_file.close()
+
 @app.route('/_expand_show')
 def expand_show():
 	artist_id = str(request.args.get('artist_id', '0', type=str))
