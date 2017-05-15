@@ -81,3 +81,12 @@ a:hover {
 .clicked-tile {
 	background-image: url("static/img/Parquet_Courts.jpg");
 }
+
+.expanded-show-image {
+	display: block;
+	max-width: 100%
+	}
+iframe {
+	display: block;
+	width: 100%;
+}
