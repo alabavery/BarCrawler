@@ -20,10 +20,6 @@ a:hover {
 	text-decoration: none;
 }
 
-.day-row {
-	margin: 1rem;
-}
-
 .show-tile {
 	margin: 0px; 
 	color: white;
@@ -78,15 +74,37 @@ a:hover {
 	width: 70%;
 }
 
-.clicked-tile {
-	background-image: url("static/img/Parquet_Courts.jpg");
+.expanded-show-container {
+	display: none;
+	background-color: white;
+	color: #4e42f4;
+	height: 100%;
 }
 
+.expanded-show-text {
+	position: relative;
+	margin-top: 22%;
+	margin-bottom: 3%;
+	color: #4e42f4;
+}
+.left-side {
+	overflow: hidden;
+}
 .expanded-show-image {
-	display: block;
-	max-width: 100%
-	}
+	position: relative;
+	margin: 8%;
+	height: 80%;
+}
+
+.spotify-play {
+	position: relative;
+	height: 10rem;
+}
+
+
 iframe {
 	display: block;
 	width: 100%;
+	border: none;
 }
+

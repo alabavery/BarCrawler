@@ -12,16 +12,24 @@
 		<div class="band-and-venue-info myfont">
 			<span style="font-size: 105%">{{ show['artist_name'] }}</span>
 			</br> {{ show['venue'] }} | {{ show['time'] }}
+			</br> {{ show['genre_string'] }}
 		</div>
 
-		<div class="col-sm-12 expanded-show-container" style="display: none">
-			<!-- <img src="{{ show['band_img'] }}" class="expanded-show-image"> -->
-			<div class="band-image"></div>
-			<div class="expanded-show-text" style="min-height: 300px;">
-				<div class="expanded-show-artist">{{ show['artist_name'] }}</div>
-				<div class="expanded-show-venue">{{ show['venue'] }}</div>
-				<div class="expanded-show-time">{{ show['time'] }}</div>
-				<div class="expanded-show-description"></div>
+		<div class="col-lg-12 col-md-12 expanded-show-container">
+	<!-- 		<div class="expanded-background">
+				<div class="a-line"></div>
+			</div> -->
+
+			<div class="left-side col-sm-7"">
+				<img class="expanded-show-image"/>
+			</div>
+			<div class="right-side col-sm-4">
+				<div class="expanded-show-text mylargefont"">
+					<div class="expanded-show-artist">{{ show['artist_name'] }}</div>
+					<div class="expanded-show-venue">{{ show['venue'] }}</div>
+					<div class="expanded-show-time">{{ show['time'] }}</div>
+					<div class="expanded-show-description"></div>
+				</div>
 				<div class="spotify-play"></div>
 			</div>
 		</div>
