@@ -44,6 +44,13 @@ a:hover {
 .beat-kitchen {
 	height: 100%;
 }
+.hideout {
+	position: relative;
+	top: 1rem;
+}
+.schubas {
+	max-width: 110%;
+}
 
 .band-and-venue-info {
 	position: relative;
