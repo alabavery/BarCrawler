@@ -4,36 +4,22 @@
 <div id='show-container'>
 {% for day in show_data %}
 <div class='row' style="margin-bottom: 2%">
-	<div class='row'><div class="col-sm-12 day-row"><h4 class="myfont">{{ day[0] }}</h4></div></div>
+	<div class='row'>
+		<div class="col-sm-12 day-row"><h4 class="myfont">{{ day[0] }}</h4></div>
+	</div>
 	{% for show in day[1] %}
-	<div class="col-sm-3 show-tile" event_id="{{ show['event_id'] }}" artist-id="{{ show['artist_id'] }}">
-		
-		<img src="/static/img/{{ show['venue_img'] }}.png" class="venue-art {{ show['venue_img'] }}">
+	<div class="col-sm-3 show-tile" event_id="{{ show['event_id'] }}">
+		<div class="venue-img-container">
+			<img src="/static/img/{{ show['venue_img'] }}.png" class="venue-art {{ show['venue_img'] }}">
+		</div>
 		<div class="band-and-venue-info myfont">
 			<span style="font-size: 105%">{{ show['artist_name'] }}</span>
-			</br> {{ show['venue'] }} | {{ show['time'] }}
-			</br> {{ show['genre_string'] }}
+			<br>{{ show['venue'] }} | {{ show['time'] }}
+			<br>{{ show['genre_string'] }}
 		</div>
-
-		<div class="col-lg-12 col-md-12 expanded-show-container">
-	<!-- 		<div class="expanded-background">
-				<div class="a-line"></div>
-			</div> -->
-
-			<div class="left-side col-sm-7"">
-				<img class="expanded-show-image"/>
-			</div>
-			<div class="right-side col-sm-4">
-				<div class="expanded-show-text mylargefont"">
-					<div class="expanded-show-artist">{{ show['artist_name'] }}</div>
-					<div class="expanded-show-venue">{{ show['venue'] }}</div>
-					<div class="expanded-show-time">{{ show['time'] }}</div>
-					<div class="expanded-show-description"></div>
-				</div>
-				<div class="spotify-play"></div>
-			</div>
+		<div class="spotify-play">
+			<div class="expand-spotify" artist-id="{{ show['artist_id'] }}"><h4 class="mylargefont">click to load spotify.</h4></div>
 		</div>
-
 	</div>
 	{% endfor %}
 </div>

@@ -25,83 +25,45 @@ a:hover {
 	color: white;
 	border: 1px solid white;
 	border-radius: 0px;
-	min-height: 300px;
-	cursor: pointer;
+	height: 40rem;
+}
+
+.venue-img-container {
+	top: 1rem;
+	left: 20%;
+	max-height: 40%;
+	max-width: 60%;
+	position: absolute;
+}
+.venue-art {
+	max-height: 100%;
+	max-width: 100%;
 }
 
 .band-and-venue-info {
-	position: absolute;
-	bottom: 5rem;
-}
-
-.venue-art {
-	left: 20px;
-}
-
-.burlington {
 	position: relative;
-	width: 75%;
-	left: 2rem;
-	top: 1rem;
+	top: 20rem;
+	margin-bottom: 2rem;
 }
-.empty-bottle {
-	position: relative;
-	width: 70%;
-	top: 2rem;
-}
-.subterranean {
-	width: 85%;
-}
-.schubas {
-	width: 85%;
-}
-.lincoln-hall {
-	width: 100%;
-}
-.beat-kitchen {
-	position: relative;
-	width: 65%;
-	top: 1rem;
-}
-.coles {
-	position: relative;
-	width: 70%;
-	top: 2.5rem;
-}
-.hideout {
-	position: relative;
-	top: 2.5rem;
-	width: 70%;
-}
-
-.expanded-show-container {
-	display: none;
-	background-color: white;
-	color: #4e42f4;
-	height: 100%;
-}
-
-.expanded-show-text {
-	position: relative;
-	margin-top: 22%;
-	margin-bottom: 3%;
-	color: #4e42f4;
-}
-.left-side {
-	overflow: hidden;
-}
-.expanded-show-image {
-	position: relative;
-	margin: 8%;
-	height: 80%;
-}
-
 .spotify-play {
-	position: relative;
-	height: 10rem;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	height: 8rem;
+	width: 100%;
+	background-color: #282828;
 }
-
-
+.expand-spotify {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: #282828;
+	cursor: pointer;
+}
+.expand-spotify .mylargefont {
+	color:#4468a3;
+	margin: 1rem;
+}
 iframe {
 	display: block;
 	width: 100%;
