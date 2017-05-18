@@ -19,7 +19,9 @@ a:hover {
 	color: white;
 	text-decoration: none;
 }
-
+.day-row {
+	margin-left: 1rem;
+}
 .show-tile {
 	margin: 0px; 
 	color: white;
@@ -38,6 +40,9 @@ a:hover {
 .venue-art {
 	max-height: 100%;
 	max-width: 100%;
+}
+.beat-kitchen {
+	height: 100%;
 }
 
 .band-and-venue-info {
