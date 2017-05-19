@@ -18,7 +18,10 @@
 			<br>{{ show['genre_string'] }}
 		</div>
 		<div class="spotify-play">
-			<div class="expand-spotify" artist-id="{{ show['artist_id'] }}"><h4 class="mylargefont">click to load spotify.</h4></div>
+			<div class="expand-spotify" artist-id="{{ show['artist_id'] }}">
+				<span class="mylargefont" style="font-size: 120%">click to load spotify.</span>
+				<img src="/static/img/spotify.png" style="height:50px">
+			</div>
 		</div>
 	</div>
 	{% endfor %}
