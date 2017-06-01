@@ -46,10 +46,15 @@ a:hover {
 }
 .hideout {
 	position: relative;
-	top: 1rem;
+	top: 1.5rem;
+	width: 90%;
 }
 .schubas {
 	max-width: 110%;
+}
+.bottom-lounge {
+	position: relative;
+	bottom: 3rem;
 }
 
 .band-and-venue-info {
