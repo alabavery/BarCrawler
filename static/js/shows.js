@@ -10,7 +10,7 @@ $(document).ready(function(){
 					track:'+spotify_play_uri+'"</iframe>');
 				$(that).remove();
 			} else {
-				$(that).find('h4').text("sorry, we couldn't find this artist on spotify.");
+				$(that).text("sorry, we couldn't find this artist on spotify.");
 			}
 		});
 		return false;
