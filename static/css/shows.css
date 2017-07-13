@@ -76,11 +76,12 @@ a:hover {
 	width: 100%;
 	background-color: black;
 	cursor: pointer;
-}
-.expand-spotify .mylargefont {
+	font-family: 'Lucida Console', Monaco, monospace;
+	text-decoration: none;
 	color:#4468a3;
-	margin: 1rem;
+	padding: 1rem;
 }
+
 iframe {
 	display: block;
 	width: 100%;
