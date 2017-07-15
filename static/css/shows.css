@@ -8,6 +8,18 @@ a:hover {
 	color: white;
 }
 
+#get-started-button {
+	background-color: transparent; 
+	border-width: 2px; 
+	border-color: white; 
+	margin:auto;
+}
+#get-started-button:hover {
+	background-color: orange;
+}
+
+
+
 .myfont {
 	font-family: "Courier New", Courier, monospace;
 	color: white;
