@@ -10,6 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href="/static/css/shows.css" rel="stylesheet" media="screen">
+		<link href="/static/css/expanded_background.css" rel="stylesheet" media="screen">
 		<script src="/static/js/bootstrap.min.js"></script>
 
 		<script type=text/javascript>$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};</script>
@@ -17,12 +18,16 @@
 	</head>
 	<body>
 		<div class="container-fluid">
-			<header class="page-header standard" style="padding: 7px; border-radius: 5px">
+			<header class="page-header standard" style="padding: 7px;">
 				<div><a href="/index" class="mylargefont"><h3>ChiBarCrawler</h3></a></div>
 			</header>
 			{% block content %}{% endblock %}
-			<header class="page-header standard" style="border-radius: 5px; padding: 7px;">
-			<a href="/contact"><h4 class="myfont" style="text-decoration: none; ">Contact Us</h4></a></div>
+			<header class="page-header standard" style="padding: 7px;">
+			<div style="text-align:center;">
+				<a href="mailto:chibarcrawler@gmail.com"><i class="svg-icon email"></i></a>
+				<a href="https://github.com/alabavery/barcrawler"><i class="svg-icon github"></i></a>
+				<a href="https://linkedin.com/in/al-avery-developer/"><i class="svg-icon linkedin"></i></a>
+			</div>
 		</div>
 	</body>
 </html>
