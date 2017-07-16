@@ -15,14 +15,6 @@ def index():
                   		)
 
 
-json_file = open(config.SONGKICK_FILE_PATH, 'r')
-show_data = json_loads(json_file.read())
-json_file.close()
-json_file = open(config.ARTIST_FILE_PATH, 'r')
-artist_data = json_loads(json_file.read())
-json_file.close()
-
-
 def military_to_pretty_time(military_time):
 	# 00:30:00 = 12:30 am
 	# 11:00:00 = 11 am
@@ -57,6 +49,14 @@ def prettify_dates_and_times(show_data):
 
 @app.route("/shows")
 def shows():
+
+	json_file = open(config.SONGKICK_FILE_PATH, 'r')
+	show_data = json_loads(json_file.read())
+	json_file.close()
+	json_file = open(config.ARTIST_FILE_PATH, 'r')
+	artist_data = json_loads(json_file.read())
+	json_file.close()
+
 	prettify_dates_and_times(show_data)
 	return render_template('shows.html',
 						title='Shows | ChiBarCrawler',
