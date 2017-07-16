@@ -31,8 +31,12 @@ a:hover {
 	color: white;
 	text-decoration: none;
 }
-.day-row {
-	margin-left: 1rem;
+.day {
+	padding: 0.5rem;
+	float: none;
+    margin: 0 auto;
+    border-radius: 3px;
+	background-color: orange;
 }
 .show-tile {
 	margin: 0px; 
