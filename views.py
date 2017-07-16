@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from json import loads as json_loads
+from datetime import datetime
+
 import config
 
 app = Flask(__name__)
@@ -20,8 +22,42 @@ json_file = open(config.ARTIST_FILE_PATH, 'r')
 artist_data = json_loads(json_file.read())
 json_file.close()
 
+
+def military_to_pretty_time(military_time):
+	# 00:30:00 = 12:30 am
+	# 11:00:00 = 11 am
+	# 13:00:00 = 1 pm
+	# 20:00:00 = 8 pm
+	# 23:00:00 = 11 pm
+	if int(military_time[3:5]) > 0:
+		minute = ":" + military_time[3:5]
+	else:
+		minute = ""
+
+	if int(military_time[:2]) > 12:
+		suffix = 'pm'
+		hour = int(military_time[:2]) - 12
+	else:
+		suffix = 'am'
+		hour = int(military_time[:2])
+	return str(hour) + minute + suffix
+
+
+def prettify_dates_and_times(show_data):
+	for day in show_data:
+		dt = datetime.strptime(day[0], "%Y-%m-%d")
+		day[0] = dt.strftime("%A %B %d")
+
+		for show in day[1]:
+			if show['time']:
+				show['time'] = military_to_pretty_time(show['time'])
+			else:
+				show['time'] = "--"
+
+
 @app.route("/shows")
 def shows():
+	prettify_dates_and_times(show_data)
 	return render_template('shows.html',
 						title='Shows | ChiBarCrawler',
 						show_data=show_data
@@ -42,3 +78,7 @@ def spotify_play(song_id):
 						song_id=song_id
 						)
 
+
+@app.route("/contact")
+def contact():
+	return render_template('contact.html',title='Contact')
