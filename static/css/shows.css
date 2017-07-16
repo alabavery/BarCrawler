@@ -9,20 +9,19 @@ a:hover {
 }
 
 #get-started-button {
-	background-color: transparent; 
+	background-color: white;
+	color: #4e42f4;
 	border-width: 2px; 
 	border-color: white; 
 	margin:auto;
 }
 #get-started-button:hover {
-	background-color: orange;
+	background-color: transparent; 
+	color: white;
 }
-
-
 
 .myfont {
 	font-family: "Courier New", Courier, monospace;
-	color: white;
 	text-decoration: none;
 }
 
@@ -36,7 +35,8 @@ a:hover {
 	float: none;
     margin: 0 auto;
     border-radius: 3px;
-	background-color: orange;
+	background-color: white;
+	color: #4e42f4;
 }
 .show-tile {
 	margin: 0px; 
