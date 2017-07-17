@@ -7,6 +7,13 @@ a:hover {
 	text-decoration: none;
 	color: white;
 }
+a:click,a:active {
+	text-decoration: none;
+}
+
+a.mylargefont:active {
+	color: #1DB954;
+}
 
 #get-started-button {
 	background-color: white;
@@ -18,6 +25,7 @@ a:hover {
 #get-started-button:hover {
 	background-color: transparent; 
 	color: white;
+	outline:none;
 }
 
 .myfont {
