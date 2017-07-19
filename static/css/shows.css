@@ -2,6 +2,9 @@
 body {
 	background-color: #4e42f4;
 }
+a.venue-link {
+	color: white;
+}
 
 a:hover {
 	text-decoration: none;

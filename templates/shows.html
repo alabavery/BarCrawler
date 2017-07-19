@@ -16,7 +16,7 @@
 		</div>
 		<div class="band-and-venue-info myfont">
 			<strong>{{ show['artist_name'] }}</strong>
-			<br>{{ show['venue'] }} | {{ show['time'] }}
+			<a class='venue-link' href="{{ venue_websites[show['venue']] }}"><br>{{ show['venue'] }}</a> | {{ show['time'] }}
 			<br>{{ show['genre_string'] }}
 		</div>
 		<div class="spotify-play">

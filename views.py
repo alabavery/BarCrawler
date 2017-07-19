@@ -13,6 +13,7 @@ def index():
     return render_template('index.html',
     					title='ChiBarCrawler | Find Music in Chicago Bars'
                   		)
+
 json_file = open(config.ARTIST_FILE_PATH, 'r')
 artist_data = json_loads(json_file.read())
 json_file.close()
@@ -44,6 +45,21 @@ def prettify_dates_and_times(show_data):
 				show['time'] = "--"
 
 
+VENUE_WEBSITES = {
+	'Empty Bottle':'http://emptybottle.com/',
+	'Schubas':'http://www.lh-st.com/',
+	'Lincoln Hall':'http://www.lh-st.com/',
+	'Beat Kitchen':'http://www.beatkitchen.com/',
+	'Subterranean':'http://www.subt.net/',
+	'Quenchers':'http://www.quenchers.com/',
+	'The Burlington':'https://www.facebook.com/TheBurlington/',
+	'Bottom Lounge':'https://bottomlounge.com/',
+	'Coles':'https://www.facebook.com/coleschicago/',
+	'The Hideout':'http://www.hideoutchicago.com/',
+	'Thalia Hall':'http://thaliahallchicago.com/#!/'
+}
+
+
 @app.route("/shows")
 def shows():
 
@@ -54,7 +70,8 @@ def shows():
 	prettify_dates_and_times(show_data)
 	return render_template('shows.html',
 						title='Shows | ChiBarCrawler',
-						show_data=show_data
+						show_data=show_data,
+						venue_websites=VENUE_WEBSITES
 						)
 
 
