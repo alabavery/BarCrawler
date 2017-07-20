@@ -7,6 +7,15 @@ import config
 app = Flask(__name__)
 
 
+@app.route("/redox", methods=['GET','POST'])
+def redox():
+	if request.method == 'POST':
+		print("post request made")
+	elif request.method == 'GET':
+		print("get request made")
+
+
+
 @app.route("/index")
 @app.route("/")
 def index():
