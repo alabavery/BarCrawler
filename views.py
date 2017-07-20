@@ -12,7 +12,10 @@ def redox():
 	if request.method == 'POST':
 		return "Thanks for your POST request"
 	elif request.method == 'GET':
-		return "Thanks for your GET request"
+		if request.headers.get('verification-token') == 'redoxengine':
+			return request.args.get('challenge','')
+		else:
+			return "wrong verification token"
 
 
 @app.route("/index")
