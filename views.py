@@ -10,10 +10,9 @@ app = Flask(__name__)
 @app.route("/redox", methods=['GET','POST'])
 def redox():
 	if request.method == 'POST':
-		return render_template('post_template.html')
+		return "Thanks for your POST request"
 	elif request.method == 'GET':
-		return render_template('get_template.html')
-
+		return "Thanks for your GET request"
 
 
 @app.route("/index")
