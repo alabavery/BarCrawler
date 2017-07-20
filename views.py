@@ -88,8 +88,3 @@ def spotify_play(song_id):
 						title='Spotify Play',
 						song_id=song_id
 						)
-
-
-@app.route("/contact")
-def contact():
-	return render_template('contact.html',title='Contact')
