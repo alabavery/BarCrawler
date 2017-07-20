@@ -10,7 +10,8 @@ app = Flask(__name__)
 @app.route("/redox", methods=['GET','POST'])
 def redox():
 	if request.method == 'POST':
-		return "Thanks for your POST request"
+		j = request.get_json()
+		return j
 	elif request.method == 'GET':
 		if request.headers.get('verification-token') == 'redoxengine':
 			return request.args.get('challenge','')
