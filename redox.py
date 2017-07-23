@@ -1,4 +1,5 @@
 from random import randint
+import json
 
 def add_new_node(node_name, nodes_list):
 	node_id = "n" + str(len(nodes_list))
@@ -66,5 +67,5 @@ def save_claim_from_redox_data(redox_data, path_to_graph_data):
 	add_new_claim(doc_name, facility_name, nodes, edges)
 
 	new_graph = {'nodes':nodes, 'edges':edges}
-	save_to_json_file(new_graph)
+	save_to_json_file(new_graph, path_to_graph_data)
 
