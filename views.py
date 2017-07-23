@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route("/redox", methods=['GET','POST'])
 def redox():
-	if request.headers.get('verification-token') == 'redoxengine':
+	if request.headers.get('verification-token') == config.REDOX_VERIFICATION:
 		if request.method == 'POST':
 			redox_data = request.get_json()
 			save_claim_from_redox_data(redox_data, config.REDOX_FILE_PATH)
