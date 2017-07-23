@@ -1,22 +1,32 @@
 from flask import Flask, render_template, request, jsonify
-from json import loads as json_loads
+import json
 from datetime import datetime
 
 import config
+from redox import save_claim_from_redox_data
 
 app = Flask(__name__)
 
 
 @app.route("/redox", methods=['GET','POST'])
 def redox():
-	if request.method == 'POST':
-		j = request.get_json()
-		return j
-	elif request.method == 'GET':
-		if request.headers.get('verification-token') == 'redoxengine':
+	if request.headers.get('verification-token') == 'redoxengine':
+		if request.method == 'POST':
+			redox_data = request.get_json()
+			save_claim_from_redox_data(redox_data, config.REDOX_FILE_PATH)
+			return "thanks"
+		elif request.method == 'GET':
 			return request.args.get('challenge','')
-		else:
-			return "wrong verification token"
+	else:
+		return "wrong verification token"
+
+
+@app.route("/redox-network-graph")
+def redox_graph():
+	json_file = open(config.REDOX_FILE_PATH, 'r')
+	data = json.loads(json_file.read())
+	json_file.close()
+	return render_template('redox-network-graph.html', data=data)
 
 
 @app.route("/index")
@@ -27,7 +37,7 @@ def index():
                   		)
 
 json_file = open(config.ARTIST_FILE_PATH, 'r')
-artist_data = json_loads(json_file.read())
+artist_data = json.loads(json_file.read())
 json_file.close()
 
 def military_to_pretty_time(military_time):
@@ -76,7 +86,7 @@ VENUE_WEBSITES = {
 def shows():
 
 	json_file = open(config.SONGKICK_FILE_PATH, 'r')
-	show_data = json_loads(json_file.read())
+	show_data = json.loads(json_file.read())
 	json_file.close()
 
 	prettify_dates_and_times(show_data)
